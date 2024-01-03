@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './Components/header'
+import Catalogo from "./Components/catalogo";
 
 function App() {
   
@@ -7,6 +8,7 @@ function App() {
   return (
     <>
       <Header />
+  <Catalogo />
     </>
   )
 }
