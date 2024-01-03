@@ -11,7 +11,9 @@ export default function Header () {
                 <NavLink name='Inicio' />
                 <NavLink name="Series" />
                 <NavLink name="Películas" />
+                <NavLink name="Explorar por idiomas " />
             </nav>
         </header>
     );
+
 }
