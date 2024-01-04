@@ -11,7 +11,6 @@ export default function Header() {
           <Link to="Peliculas" className="navLink">Inicio</Link>
           <Link to="Series" className="navLink">Series</Link>
           <Link to="Peliculas" className="navLink">Películas</Link>
-          <Link to="Series" className="navLink">Explorar por idiomas</Link>
         </nav>
       </section>
     </header>
