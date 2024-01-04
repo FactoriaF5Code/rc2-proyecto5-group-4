@@ -1,8 +1,22 @@
 header {
-    height: 68px;
-    background-color: black;
+  height: 68px;
+  background-color: black;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    padding-left: 65px;
 }
 
 .logo {
-    width: 5rem;
+  width: 92.5px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
 }

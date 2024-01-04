@@ -4,6 +4,6 @@ import './NavLink.css';
 export default function NavLink ({name}) {
 
     return (
-       <a href="">{name}</a>
+       <h5>{name}</h5>
     );
 }

@@ -1,1 +1,11 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
 
+
+
+body {
+    font-family: Helvetica;
+    background-color: black;
+}
