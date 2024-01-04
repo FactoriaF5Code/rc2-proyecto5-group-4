@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react';
-import axios from './Axios';
+import axios from '../Axios/Axios';
 import './Row.css';
 import PropTypes from 'prop-types';
 
