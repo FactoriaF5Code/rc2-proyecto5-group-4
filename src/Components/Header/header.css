@@ -8,6 +8,7 @@ header {
     flex-direction: row;
     gap: 25px;
     padding-left: 65px;
+    padding-top: 15px;
 }
 
 .logo {
