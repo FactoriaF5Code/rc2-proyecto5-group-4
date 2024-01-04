@@ -1,4 +1,4 @@
-import Row from './Row';
+import Row from '../Row/Row';
 
 const API_KEY = '39c647794cf71361afde189b2eddfd76';
 

@@ -1,5 +1,5 @@
 import '../Components/Header.css';
-import NavLink  from "./NavLink";
+import NavLink  from "../Nav/NavLink";
 import logo from '../assets/logoNetflix.png'
 
 export default function Header () {
