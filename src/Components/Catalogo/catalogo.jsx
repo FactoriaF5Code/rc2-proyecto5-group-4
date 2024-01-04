@@ -1,18 +1,28 @@
-import Row from '../Row/Row';
+import './catalogo.css';
+import { useEffect, useState } from 'react'
 
-const API_KEY = '39c647794cf71361afde189b2eddfd76';
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ODU5ZDU5MzFiNThhZWIwNGQ1NzE0ZDIxZTJhZDM4ZSIsInN1YiI6IjY1OTNlYzVhYTU4OTAyNzExOTk3NmNmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RHDZ7xzcrZG0xcGzzX24WKxHEv6w9wPNOCxVt0pM8SE'
+  }
+};
 
 function Catalogo() {
+  const [films, setFilms] = useState([])
+  useEffect(() => {
+    fetch('https://api.themoviedb.org/3/movie/now_playing?language=es-ES&page=1', options)
+      .then(response => response.json())
+      .then(response => setFilms(response.results))
+      .catch(err => console.error(err));
+  }, [])
   return (
-    <div>
-      <Row title="NETFLIX ORIGINALS" fetchUrl={`https://api.themoviedb.org/3/discover/tv?api_key=${API_KEY}&with_networks=213`} isLargeRow/>
-      <Row title="Trending Now" fetchUrl={`https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&language=en-US`}/>
-      <Row title="Top Rated" fetchUrl={`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US`}/>
-      <Row title="Action Movies" fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=28`}/>
-      <Row title="Comedy Movies" fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=35`}/>
-      <Row title="Horror Movies" fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=27`}/>
-      <Row title="Romance Movies" fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=10749`}/>
-      <Row title="Documentaries" fetchUrl={`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&with_genres=99`}/>
+    <div className='poster-container'>
+
+      {films.map(film =>(<img className='poster-film' src= 
+      {`https://image.tmdb.org/t/p/w500${film.backdrop_path}`} 
+      key={film.id} /> ))}
     </div>
   );
 }
