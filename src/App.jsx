@@ -12,6 +12,7 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Catalogo />} />
+          <Route exact path="/Peliculas" element={<Catalogo />} />
           <Route exact path="/Series" element={<Series />} />
         </Routes>
         <Footer />
