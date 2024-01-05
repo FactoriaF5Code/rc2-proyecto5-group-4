@@ -16,13 +16,15 @@ export default function Series() {
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
+    const pagesToFetch = [1, 5, 6]; 
+    pagesToFetch.forEach(page => {
     fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => setSeries(response.results))
-      .catch((err) => console.error(err));
+      `https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=${page}`,
+      options)
+      .then(response => response.json())
+      .then(response => setSeries(prevSeries => [...prevSeries, ...response.results]))
+      .catch(err => console.error(err));
+  });
   }, []);
 
   return (

@@ -12,10 +12,13 @@ const options = {
 function Catalogo() {
   const [films, setFilms] = useState([])
   useEffect(() => {
-    fetch('https://api.themoviedb.org/3/movie/now_playing?language=es-ES&page=1', options)
-      .then(response => response.json())
-      .then(response => setFilms(response.results))
-      .catch(err => console.error(err));
+    const pagesToFetch = [1, 5, 6]; 
+    pagesToFetch.forEach(page => {
+      fetch(`https://api.themoviedb.org/3/movie/now_playing?language=es-ES&page=${page}`, options)
+        .then(response => response.json())
+        .then(response => setFilms(prevFilms => [...prevFilms, ...response.results]))
+        .catch(err => console.error(err));
+    });
   }, [])
   return (
     <div className='poster-container'>
