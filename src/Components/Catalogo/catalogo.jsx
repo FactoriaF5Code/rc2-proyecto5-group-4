@@ -1,7 +1,7 @@
 import './catalogo.css';
 import { useEffect, useState } from 'react'
 
-const options = {
+ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',

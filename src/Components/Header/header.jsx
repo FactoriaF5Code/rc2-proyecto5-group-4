@@ -8,7 +8,7 @@ export default function Header() {
       <section className="headerContainer">
         <img src={logo} alt="Netflix" className="logo" />
         <nav>
-          <Link to="Peliculas" className="navLink">Inicio</Link>
+          <Link to="/" className="navLink">Inicio</Link>
           <Link to="Series" className="navLink">Series</Link>
           <Link to="Peliculas" className="navLink">Películas</Link>
         </nav>

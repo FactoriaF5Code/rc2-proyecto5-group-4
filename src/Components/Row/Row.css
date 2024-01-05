@@ -1,0 +1,5 @@
+.poster-container-genre{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
