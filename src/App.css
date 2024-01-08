@@ -6,9 +6,9 @@
 body {
   font-family: Helvetica;
   background-color: black;
-  width: 1920px;
+  width: 100vw;
 }
 
-header, footer {
-  width: 1920px;
+header, footer, main {
+  width: 100vw;
 }
