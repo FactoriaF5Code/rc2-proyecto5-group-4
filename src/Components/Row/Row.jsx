@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState} from "react";
+import Slider from "react-slick";
 import "./Row.css";
+
 
 const options = {
   method: "GET",
@@ -47,21 +49,33 @@ const Row = ({ genreId }) => {
     fetchMovies();
   }, [genreId]);
 
-  return (
-    <section className="list-container">
-      <h2 className="movie-tittle">{genreId}</h2>
-      <article className="movie-container">
-        {peliculas.map((movie) => (
-          <img
-            key={movie.id}
-            className="movie-poster"
-            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-            alt={movie.title}
-          />
-        ))}
-      </article>
-    </section>
-  );
-};
+  
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToScroll: 1,
+    rows: 1,
+    slidesPerRow: 4
+   };
+
+    return (
+      <section className="list-container">
+        <h2 className="movie-tittle">{genreId}</h2>
+        <Slider {...settings} className="slider-movies">
+          <article className="movie-container">
+            {peliculas.map((movie) => (
+              <img
+                key={movie.id}
+                className="movie-poster"
+                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+                alt={movie.title}
+              />
+            ))}
+          </article>
+        </Slider>
+      </section>
+    );
+  }
 
 export default Row;
