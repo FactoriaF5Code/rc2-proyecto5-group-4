@@ -1,15 +1,12 @@
-.poster-container{
-    padding-left: 60px;
-    padding-bottom: 60px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 58.41px 7.6px;
-    
+.poster-container {
+  padding-left: 60px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 58.41px 7.6px;
 }
-.poster-film{
-    
-    width: 296.16px;
-    border-radius: 5px;
-    
+.poster-film {
+  width: 296.16px;
+  border-radius: 5px;
 }

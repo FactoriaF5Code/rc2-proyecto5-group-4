@@ -1,5 +1,18 @@
-.poster-container-genre{
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
+.list-container {
+  padding-left: 60px;
+}
+
+.movie-tittle {
+  padding: 15px 0 10px 0;
+}
+.movie-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  gap: 58.41px 7.6px;
+}
+
+.movie-poster {
+  width: 296.16px;
+  border-radius: 5px;
 }
