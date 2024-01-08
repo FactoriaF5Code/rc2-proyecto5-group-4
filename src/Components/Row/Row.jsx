@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState} from "react";
 import Slider from "react-slick";
 import "./Row.css";
+import "./slick.css"; 
+import "./slick-theme.css";
 
 
 const options = {
@@ -54,6 +57,7 @@ const Row = ({ genreId }) => {
     dots: false,
     infinite: true,
     speed: 500,
+    slidesToShow: 6,
     slidesToScroll: 1,
     rows: 1,
     
@@ -63,7 +67,7 @@ const Row = ({ genreId }) => {
       <section className="list-container">
         <h2 className="movie-tittle">{genreId}</h2>
         <Slider {...settings} >
-          <article className="movie-container">
+          {/* <article className="movie-container"> */}
             {peliculas.map((movie) => (
               <img
                 key={movie.id}
@@ -72,7 +76,7 @@ const Row = ({ genreId }) => {
                 alt={movie.title}
               />
             ))}
-          </article>
+          {/* </article> */}
         </Slider>
       </section>
     );
