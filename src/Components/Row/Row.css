@@ -6,7 +6,7 @@
   padding: 15px 0 10px 0;
 }
 .movie-container {
-  display: flex;
+  display: flex !important;
   flex-direction: row;
   overflow: hidden;
   gap: 58.41px 7.6px;
@@ -15,4 +15,8 @@
 .movie-poster {
   width: 296.16px;
   border-radius: 5px;
+}
+.slick-slide {
+    display: flex;
+    overflow: hidden;
 }

@@ -56,13 +56,13 @@ const Row = ({ genreId }) => {
     speed: 500,
     slidesToScroll: 1,
     rows: 1,
-    slidesPerRow: 4
+    
    };
 
     return (
       <section className="list-container">
         <h2 className="movie-tittle">{genreId}</h2>
-        <Slider {...settings} className="slider-movies">
+        <Slider {...settings} >
           <article className="movie-container">
             {peliculas.map((movie) => (
               <img
