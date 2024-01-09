@@ -1,17 +1,17 @@
 import "./Series.css";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const options = {
-  method: 'GET',
+  method: "GET",
   headers: {
-    accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ODU5ZDU5MzFiNThhZWIwNGQ1NzE0ZDIxZTJhZDM4ZSIsInN1YiI6IjY1OTNlYzVhYTU4OTAyNzExOTk3NmNmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RHDZ7xzcrZG0xcGzzX24WKxHEv6w9wPNOCxVt0pM8SE',
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ODU5ZDU5MzFiNThhZWIwNGQ1NzE0ZDIxZTJhZDM4ZSIsInN1YiI6IjY1OTNlYzVhYTU4OTAyNzExOTk3NmNmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RHDZ7xzcrZG0xcGzzX24WKxHEv6w9wPNOCxVt0pM8SE",
   },
 };
 
 export default function Series() {
-  // Aquí estableces los géneros predeterminados
   const [series, setSeries] = useState([]);
 
   useEffect(() => {
@@ -36,6 +36,7 @@ export default function Series() {
           className="poster-serie"
           src={`https://image.tmdb.org/t/p/w500${serie.backdrop_path}`}
           key={serie.id}
+          alt={serie.name}
         />
       ))}
     </div>

@@ -1,11 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState, useMemo} from "react";
+import { useEffect, useState, useMemo } from "react";
 import Slider from "react-slick";
 import "./Row.css";
-import "./slick.css"; 
+import "./slick.css";
 import "./slick-theme.css";
-import 'slick-carousel';
-
+import "slick-carousel";
 
 const options = {
   method: "GET",
@@ -26,15 +25,18 @@ async function obtenerPeliculasPorGenero(genreId) {
 }
 
 const Row = ({ genreId }) => {
-  const generosDePeliculas = useMemo(() => ({
-    Acción: 28,
-    Comedia: 35,
-    Drama: 18,
-    Aventura: 12,
-    Horror: 27,
-    Histórica: 36,
-    Western: 37,
-  }), []);
+  const generosDePeliculas = useMemo(
+    () => ({
+      Acción: 28,
+      Comedia: 35,
+      Drama: 18,
+      Aventura: 12,
+      Horror: 27,
+      Histórica: 36,
+      Western: 37,
+    }),
+    []
+  );
 
   const [peliculas, setPeliculas] = useState([]);
 
@@ -53,9 +55,6 @@ const Row = ({ genreId }) => {
     fetchMovies();
   }, [genreId, generosDePeliculas]);
 
-  
-
-  
   const settings = {
     dots: false,
     infinite: true,
@@ -63,26 +62,23 @@ const Row = ({ genreId }) => {
     slidesToShow: 6,
     slidesToScroll: 1,
     rows: 1,
-    
-   };
+  };
 
-    return (
-      <section className="list-container">
-        <h2 className="movie-tittle">{genreId}</h2>
-        <Slider {...settings} >
-          {/* <article className="movie-container"> */}
-            {peliculas.map((movie) => (
-              <img
-                key={movie.id}
-                className="movie-poster"
-                src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
-                alt={movie.title}
-              />
-            ))}
-          {/* </article> */}
-        </Slider>
-      </section>
-    );
-  }
+  return (
+    <section className="list-container">
+      <h2 className="movie-tittle">{genreId}</h2>
+      <Slider {...settings}>
+        {peliculas.map((movie) => (
+          <img
+            key={movie.id}
+            className="movie-poster"
+            src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
+            alt={movie.title}
+          />
+        ))}
+      </Slider>
+    </section>
+  );
+};
 
 export default Row;
