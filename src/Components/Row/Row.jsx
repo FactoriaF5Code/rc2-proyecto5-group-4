@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import { useEffect, useState} from "react";
+import { useEffect, useState, useMemo} from "react";
 import Slider from "react-slick";
 import "./Row.css";
 import "./slick.css"; 
 import "./slick-theme.css";
+import 'slick-carousel';
 
 
 const options = {
@@ -25,7 +26,7 @@ async function obtenerPeliculasPorGenero(genreId) {
 }
 
 const Row = ({ genreId }) => {
-  const generosDePeliculas = {
+  const generosDePeliculas = useMemo(() => ({
     Acción: 28,
     Comedia: 35,
     Drama: 18,
@@ -33,7 +34,7 @@ const Row = ({ genreId }) => {
     Horror: 27,
     Histórica: 36,
     Western: 37,
-  };
+  }), []);
 
   const [peliculas, setPeliculas] = useState([]);
 
@@ -50,7 +51,9 @@ const Row = ({ genreId }) => {
     };
 
     fetchMovies();
-  }, [genreId]);
+  }, [genreId, generosDePeliculas]);
+
+  
 
   
   const settings = {

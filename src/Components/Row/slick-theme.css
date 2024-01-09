@@ -1,4 +1,6 @@
 @charset 'UTF-8';
+@import url('https://use.fontawesome.com/releases/v5.0.13/css/all.css');
+
 /* Slider */
 .slick-loading .slick-list
 {
@@ -24,6 +26,8 @@
     opacity: 0;
     transition: opacity 0.6s ease-in-out;
     height: 100%;
+    width: 50px;
+    z-index: 500;
     
     
 
@@ -74,8 +78,10 @@
 {
     font-family: 'slick';
     font-size: 2vw;
+    height: 50%;
     line-height: 1;
-    transform: scaleY(1.5);
+    top: calc(50% - 25%);
+    z-index: 500;
 
     opacity: .75;
     color: white;
@@ -86,7 +92,7 @@
 
 .slick-prev
 {
-    left: -25px;
+    left: 0;
 }
 [dir='rtl'] .slick-prev
 {
@@ -95,16 +101,20 @@
 }
 .slick-prev:before
 {
-    content: '<';
+    content: "\f053";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 [dir='rtl'] .slick-prev:before
 {
-    content: '>';
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
 .slick-next
 {
-    right: -25px;
+    right: 0;
 }
 [dir='rtl'] .slick-next
 {
@@ -113,11 +123,15 @@
 }
 .slick-next:before
 {
-    content: '>';
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 [dir='rtl'] .slick-next:before
 {
-    content: '<';
+    content: "\f053";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 
 /* Dots */
@@ -210,7 +224,7 @@
     color: black;
 }
 
-/* .slick-slider:hover .slick-prev,
+ .slick-slider:hover .slick-prev,
 .slick-slider:hover .slick-next {
   opacity: 1;
-} */
+} 
