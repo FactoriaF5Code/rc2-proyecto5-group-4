@@ -68,7 +68,6 @@ const Row = ({ genreId }) => {
     <section className="list-container">
       <h2 className="movie-tittle">{genreId}</h2>
       <Slider {...settings}>
-        {/* <article className="movie-container"> */}
         {peliculas.map((movie) => (
           <img
             key={movie.id}
@@ -77,7 +76,6 @@ const Row = ({ genreId }) => {
             alt={movie.title}
           />
         ))}
-        {/* </article> */}
       </Slider>
     </section>
   );
