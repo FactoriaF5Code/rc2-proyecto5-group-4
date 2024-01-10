@@ -1,7 +1,9 @@
 import "./catalogo.css";
 import { useEffect, useState } from "react";
+import options from "../Axios/Axios"
 
-const options = {
+
+/* const options = {
   method: "GET",
   headers: {
     accept: "application/json",
@@ -9,6 +11,7 @@ const options = {
       "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ODU5ZDU5MzFiNThhZWIwNGQ1NzE0ZDIxZTJhZDM4ZSIsInN1YiI6IjY1OTNlYzVhYTU4OTAyNzExOTk3NmNmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RHDZ7xzcrZG0xcGzzX24WKxHEv6w9wPNOCxVt0pM8SE",
   },
 };
+ */
 
 function Catalogo() {
   const [films, setFilms] = useState([]);
