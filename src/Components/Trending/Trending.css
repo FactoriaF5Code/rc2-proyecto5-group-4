@@ -1,0 +1,80 @@
+.gradiant{
+    position: relative;
+    overflow: hidden;
+}
+.gradiant::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 1%, rgba(0,0,0,0) 53%, rgba(0,0,0,1) 99%);
+}
+.trending-image {
+    width: 100%;
+    height: auto;
+    padding-top: 60px;
+}
+
+.trending {
+    max-width: 100%;
+}
+
+.trending-title {
+    position: absolute;
+    top: 10%;
+    left: 2%;
+    padding: 10px;
+    color: white;
+    text-shadow: 2px 2px black;
+    font-size: 5rem;
+}
+
+.button-container {
+  position: absolute;
+  padding: 0 60px;
+  top: 70%;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  
+}
+
+.play {
+    background-color: #9E9E9E;
+    color: black;
+}
+
+.more-info{
+    background-color: #323337;
+    color: #B6B6B6;
+}
+
+.play, .more-info{
+   display: flex;
+    align-items: center; 
+    gap: 10px;
+    width: 250px;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.play:hover, .more-info:hover{
+    background-color: rgb(108, 102, 102);
+    border: none;
+}
+
+.description-tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #B6B6B6;
+    padding: 25px;
+    font-size: 2rem;
+    border-radius: 5px;
+    left: 95%;
+    width: 100%;
+}
+
