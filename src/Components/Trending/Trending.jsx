@@ -19,7 +19,7 @@ export default function Trending() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/trending/all/day?language=en-US",
+      "https://api.themoviedb.org/3/trending/all/day?language=es-ES",
       options
     )
       .then((response) => response.json())
