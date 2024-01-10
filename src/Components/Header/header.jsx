@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import "./header.css";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logoNetflix.png";
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function Header() {
+  const [showInput, setShowInput] = useState(false);
+
   return (
     <header>
       <section className="headerContainer">
@@ -14,8 +17,10 @@ export default function Header() {
           <Link to="Peliculas" className="navLink">Películas</Link>
         </nav>
         <div className="search">
-          <SearchIcon className="icon" />
-          <input type="text" placeholder="Buscar" />
+          <SearchIcon className="icon" onClick={() => setShowInput(!showInput)} />
+          {showInput && (
+            <input className='buscador' type="text" placeholder="Buscar" />
+          )}
         </div>
       </section>
     </header>

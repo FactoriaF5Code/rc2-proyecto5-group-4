@@ -33,3 +33,22 @@ nav {
 .navLink:hover {
   color:#a8a8a8
 }
+
+.search{
+  position: absolute;
+  right: 65px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.buscador{
+  width: 300px;
+  height: 35px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 10px;
+  font-size: 1.5rem;
+}
