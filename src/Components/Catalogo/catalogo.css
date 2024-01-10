@@ -1,12 +1,9 @@
 .poster-container {
-  padding-left: 60px;
-  padding-bottom: 60px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 58.41px 7.6px;
+  padding-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 }
 .poster-film {
-  width: 296.16px;
+  max-width: 100%;
   border-radius: 5px;
 }
