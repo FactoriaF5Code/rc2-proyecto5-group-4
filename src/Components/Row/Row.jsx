@@ -5,15 +5,7 @@ import "./Row.css";
 import "./slick.css";
 import "./slick-theme.css";
 import "slick-carousel";
-
-const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ODU5ZDU5MzFiNThhZWIwNGQ1NzE0ZDIxZTJhZDM4ZSIsInN1YiI6IjY1OTNlYzVhYTU4OTAyNzExOTk3NmNmZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RHDZ7xzcrZG0xcGzzX24WKxHEv6w9wPNOCxVt0pM8SE",
-  },
-};
+import options from "../Axios/Axios";
 
 async function obtenerPeliculasPorGenero(genreId) {
   const response = await fetch(
@@ -68,7 +60,6 @@ const Row = ({ genreId }) => {
     <section className="list-container">
       <h2 className="movie-tittle">{genreId}</h2>
       <Slider {...settings}>
-        {/* <article className="movie-container"> */}
         {peliculas.map((movie) => (
           <img
             key={movie.id}
@@ -77,7 +68,6 @@ const Row = ({ genreId }) => {
             alt={movie.title}
           />
         ))}
-        {/* </article> */}
       </Slider>
     </section>
   );

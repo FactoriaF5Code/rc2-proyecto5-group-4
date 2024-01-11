@@ -1,0 +1,15 @@
+.search-container {
+  background-image: url(https://www.phoneworld.com.pk/wp-content/uploads/2020/10/seo-watch-free-link-preview.jpg);
+  background-size: 100%;
+  width: 100%;
+  min-height: 100vh;
+  padding: 130px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-title {
+  color: #e5e5e5;
+  font-size: 3rem;
+}
