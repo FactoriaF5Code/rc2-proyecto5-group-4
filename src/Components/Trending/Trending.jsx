@@ -31,11 +31,11 @@ export default function Trending() {
             />
           </div>
           <div className="info">
-            <h1 className="trending-title">{films[0].title}</h1>
+            <h1 className="trending-title">{films[0].title || films[0].name}</h1>
           </div>
           <div className="button-container">
             <a
-              href="https://www.youtube.com/watch?v=v0_gxsfmY4Q"
+              href={`https://www.youtube.com/results?search_query=${films[0].title || films[0].name}`} 
               target="blank"
             >
               <button className="play">
