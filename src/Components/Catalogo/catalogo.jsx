@@ -20,14 +20,16 @@ function Catalogo() {
   }, []);
   return (
     <div className="poster-container">
-      {films.map((film) => (
-        <img
-          className="poster-film"
-          src={`https://image.tmdb.org/t/p/w500${film.backdrop_path}`}
-          key={film.id}
-          alt={film.title}
-        />
-      ))}
+      {films
+        .filter((film) => film.backdrop_path) // Filtrar películas sin backdrop_path
+        .map((film) => (
+          <img
+            className="poster-film"
+            src={`https://image.tmdb.org/t/p/w500${film.backdrop_path}`}
+            key={film.id}
+            alt={film.title}
+          />
+        ))}
     </div>
   );
 }
